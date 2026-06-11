@@ -5,7 +5,7 @@ Curriculum Studio is a curriculum management system prototype for an AI-literacy
 **Repository:** [github.com/slothman01/aiedu-test](https://github.com/slothman01/aiedu-test)  
 **Live demo:** [curriculum-studio.vercel.app](https://curriculum-studio.vercel.app/)  
 **Also:** [aiedu-test-two.vercel.app](https://aiedu-test-two.vercel.app/) (previous deploy)  
-**Application video:** _(add link after recording)_
+**Application video:** [Loom walkthrough](https://www.loom.com/share/b80eab28497d4684a1feed7c7f24e616) · also embedded on [/process](https://curriculum-studio.vercel.app/process)
 
 Built with **Cursor + Claude**. Estimated build time: ~10 hours (Phase 1).
 
@@ -24,7 +24,7 @@ Use a **fresh incognito window** so admin login and collection start clean. Dism
 | 7 | `/admin/analytics` | Mock charts (optional, 30 sec) |
 | 8 | `/process` | Built vs mocked table, evaluation criteria |
 
-After recording: add Loom link to this README and embed on `/process`.
+After recording: link is in README and embedded on `/process`.
 
 ---
 

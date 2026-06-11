@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { VideoEmbedPlaceholder } from "@/components/process/video-embed-placeholder";
+import { ApplicationVideo } from "@/components/process/application-video";
 import { HighlightTeal } from "@/components/ui/highlight-teal";
 import { AIEDU, STUDIO } from "@/lib/brand";
 
@@ -47,11 +47,11 @@ export default function ProcessPage() {
         <CardHeader>
           <CardTitle>Application video</CardTitle>
           <CardDescription>
-            Walkthrough demo for reviewers — embed after recording
+            Walkthrough demo for reviewers
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <VideoEmbedPlaceholder />
+          <ApplicationVideo />
         </CardContent>
       </Card>
 
