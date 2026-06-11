@@ -19,7 +19,11 @@ Curriculum Studio prototypes the fix: one structured catalog for educators, one 
 
 ## Screenshots
 
-_Add catalog, admin, and AI metadata panel screenshots after deploy._
+Capture after deploy and add to `public/screenshots/`:
+
+- `catalog.png` — hero + resource grid with filters
+- `admin.png` — resource table with status workflow
+- `ai-metadata.png` — admin edit page with AI assist panel
 
 ## Stack
 

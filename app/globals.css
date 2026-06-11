@@ -93,20 +93,31 @@
 
   .highlight-teal {
     @apply relative inline-block;
-    background-image: linear-gradient(
-      to top,
-      var(--teal) 0%,
-      var(--teal) 28%,
-      transparent 28%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  }
+
+  .cta-arrow {
+    @apply inline-block transition-transform duration-[350ms] ease-in;
+  }
+
+  .btn-aiedu,
+  .btn-aiedu-light,
+  .btn-aiedu-dark,
+  .btn-aiedu-pink {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold;
+    transition: all 350ms ease-in;
+  }
+
+  .btn-aiedu:hover .cta-arrow,
+  .btn-aiedu-light:hover .cta-arrow,
+  .btn-aiedu-dark:hover .cta-arrow,
+  .btn-aiedu-pink:hover .cta-arrow,
+  .group\/button:hover .cta-arrow {
+    transform: rotate(-45deg);
   }
 
   .btn-aiedu {
-    @apply inline-flex items-center justify-center rounded-md bg-[var(--navy)] px-4 py-2 text-sm font-semibold text-white;
+    @apply bg-[var(--navy)] text-white;
     box-shadow: 4px 4px 0 var(--mandarin);
-    transition: all 350ms ease-in;
   }
 
   .btn-aiedu:hover {
@@ -115,9 +126,8 @@
   }
 
   .btn-aiedu-light {
-    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-[var(--green)];
+    @apply bg-white text-[var(--green)];
     box-shadow: 4px 4px 0 var(--green);
-    transition: all 350ms ease-in;
   }
 
   .btn-aiedu-light:hover {
@@ -126,12 +136,21 @@
   }
 
   .btn-aiedu-dark {
-    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-[var(--mandarin)];
+    @apply bg-white text-[var(--mandarin)];
     box-shadow: 4px 4px 0 var(--mandarin);
-    transition: all 350ms ease-in;
   }
 
   .btn-aiedu-dark:hover {
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .btn-aiedu-pink {
+    @apply bg-[var(--pink)] text-white;
+    box-shadow: 4px 4px 0 var(--navy);
+  }
+
+  .btn-aiedu-pink:hover {
     box-shadow: none;
     opacity: 1;
   }

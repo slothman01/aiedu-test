@@ -43,8 +43,10 @@ export default function CollectionPage() {
           <p className="mt-2 text-sm text-muted-foreground">
             Tap the heart icon on any resource card to save it here.
           </p>
-          <Button asChild variant="aiedu" className="mt-4">
-            <Link href="/">Browse catalog</Link>
+          <Button asChild variant="aiedu-pink" className="mt-4">
+            <Link href="/">
+              Browse catalog <span className="cta-arrow ml-1">→</span>
+            </Link>
           </Button>
         </div>
       ) : (

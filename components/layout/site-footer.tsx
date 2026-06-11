@@ -56,11 +56,8 @@ export function SiteFooter() {
               how aiEDU could replace its static resource portal with a searchable
               catalog and admin workflow. Not an official aiEDU product.
             </p>
-            <Link
-              href="/process"
-              className="mt-3 inline-block text-sm font-semibold text-[var(--teal)] hover:underline"
-            >
-              View build process →
+            <Link href="/process" className="btn-aiedu-pink mt-4 inline-flex text-sm">
+              View build process <span className="cta-arrow ml-1">→</span>
             </Link>
           </div>
         </div>

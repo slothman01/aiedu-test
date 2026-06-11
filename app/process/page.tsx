@@ -13,6 +13,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { VideoEmbedPlaceholder } from "@/components/process/video-embed-placeholder";
+import { HighlightTeal } from "@/components/ui/highlight-teal";
 import { AIEDU, STUDIO } from "@/lib/brand";
 
 export default function ProcessPage() {
@@ -23,7 +25,7 @@ export default function ProcessPage() {
           Application exhibit · Built for {AIEDU.name}
         </p>
         <h1 className="mt-3 text-white sm:text-[42px]">
-          How <span className="highlight-teal text-white">{STUDIO.name}</span> was
+          How <HighlightTeal className="text-white">{STUDIO.name}</HighlightTeal> was
           built
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90">
@@ -40,6 +42,18 @@ export default function ProcessPage() {
           structured metadata, and a lightweight admin workflow.
         </p>
       </section>
+
+      <Card className="rounded-xl border-dashed border-[var(--teal)]/30">
+        <CardHeader>
+          <CardTitle>Application video</CardTitle>
+          <CardDescription>
+            Walkthrough demo for reviewers — embed after recording
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <VideoEmbedPlaceholder />
+        </CardContent>
+      </Card>
 
       <Card className="rounded-xl">
         <CardHeader>
@@ -184,18 +198,6 @@ export default function ProcessPage() {
           <p className="text-muted-foreground">
             Built with Cursor + Claude. Estimated build time: ~10 hours (Phase 1).
           </p>
-        </CardContent>
-      </Card>
-
-      <Card className="rounded-xl border-dashed">
-        <CardHeader>
-          <CardTitle>Application video</CardTitle>
-          <CardDescription>Embed link added after recording</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex aspect-video items-center justify-center rounded-lg bg-muted text-sm text-muted-foreground">
-            Video embed placeholder — add YouTube/Vimeo URL here
-          </div>
         </CardContent>
       </Card>
     </div>

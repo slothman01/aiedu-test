@@ -1,13 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SiteNav } from "@/components/layout/site-nav";
 import { AIEDU, STUDIO } from "@/lib/brand";
-
-const navItems = [
-  { href: "/", label: "Catalog" },
-  { href: "/collection", label: "My Collection" },
-  { href: "/process", label: "Process" },
-  { href: "/admin", label: "Admin" },
-];
 
 export function SiteHeader() {
   return (
@@ -28,28 +22,7 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        <nav
-          aria-label="Main navigation"
-          className="flex flex-wrap items-center justify-end gap-0.5"
-        >
-          {navItems.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="rounded-md px-2.5 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--navy)] transition-colors hover:bg-[var(--lightgray)] sm:px-3 sm:text-sm"
-            >
-              {label}
-            </Link>
-          ))}
-          <a
-            href={AIEDU.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-aiedu ml-1 hidden text-xs sm:inline-flex sm:text-sm"
-          >
-            aiedu.org →
-          </a>
-        </nav>
+        <SiteNav />
       </div>
     </header>
   );

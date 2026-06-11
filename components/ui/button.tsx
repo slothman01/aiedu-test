@@ -18,6 +18,8 @@ const buttonVariants = cva(
           "bg-white text-[var(--green)] shadow-[4px_4px_0_var(--green)] hover:shadow-none",
         "aiedu-dark":
           "bg-white text-[var(--mandarin)] shadow-[4px_4px_0_var(--mandarin)] hover:shadow-none",
+        "aiedu-pink":
+          "bg-[var(--pink)] text-white shadow-[4px_4px_0_var(--navy)] hover:shadow-none",
         outline:
           "border-border bg-background text-[var(--navy)] hover:bg-secondary",
         secondary:

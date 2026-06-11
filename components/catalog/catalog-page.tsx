@@ -17,6 +17,7 @@ import {
   toggleFilterValue,
 } from "@/lib/filters";
 import type { CatalogFilters, GradeBand } from "@/lib/types";
+import { HighlightTeal } from "@/components/ui/highlight-teal";
 import { cn } from "@/lib/utils";
 
 export function CatalogPage() {
@@ -61,7 +62,7 @@ export function CatalogPage() {
         <p className="eyebrow-green !text-[var(--teal)]">Educators · Curricular Resources</p>
         <h1 className="mt-3 max-w-3xl text-white sm:text-[42px]">
           Find{" "}
-          <span className="highlight-teal text-white">AI-literacy</span> classroom
+          <HighlightTeal className="text-white">AI-literacy</HighlightTeal> classroom
           materials
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85">

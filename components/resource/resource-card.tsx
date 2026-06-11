@@ -4,13 +4,8 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { ResourceTypeThumbnail } from "@/components/resource/resource-type-thumbnail";
 import { GRADE_LABELS, TYPE_LABELS } from "@/lib/constants";
 import type { Resource } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -27,10 +22,11 @@ export function ResourceCard({
   onToggleSave,
 }: ResourceCardProps) {
   return (
-    <Card className="card-aiedu-hover relative flex h-full flex-col rounded-md border-[var(--lightgray)] bg-white shadow-sm">
-      <CardHeader className="pb-3">
+    <Card className="card-aiedu-hover relative flex h-full flex-col overflow-hidden rounded-md border border-[var(--lightgray)] bg-white p-0 shadow-sm ring-0">
+      <ResourceTypeThumbnail type={resource.type} />
+      <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
-          <div className="space-y-2">
+          <div className="min-w-0 flex-1 space-y-2">
             <div className="flex flex-wrap gap-2">
               <Badge className="rounded-sm bg-[var(--navy)]/10 font-semibold text-[var(--navy)] hover:bg-[var(--navy)]/10">
                 {TYPE_LABELS[resource.type]}
@@ -42,21 +38,21 @@ export function ResourceCard({
                 {GRADE_LABELS[resource.gradeBand]}
               </Badge>
             </div>
-            <CardTitle className="text-lg font-bold leading-snug text-[var(--navy)]">
+            <h3 className="font-heading text-lg font-bold leading-snug text-[var(--navy)]">
               <Link
                 href={`/resource/${resource.slug}`}
                 className="hover:text-[var(--green)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)]"
               >
                 {resource.title}
               </Link>
-            </CardTitle>
+            </h3>
           </div>
           {onToggleSave && (
             <Button
               type="button"
               variant="ghost"
               size="icon"
-              className="shrink-0"
+              className="-mr-1 shrink-0"
               aria-label={saved ? "Remove from collection" : "Save to collection"}
               onClick={() => onToggleSave(resource.slug)}
             >
@@ -71,34 +67,36 @@ export function ResourceCard({
             </Button>
           )}
         </div>
-        <CardDescription className="line-clamp-2 text-sm text-muted-foreground">
+
+        <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
           {resource.summary}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="mt-auto pt-0">
-        <div className="flex flex-wrap gap-1.5">
-          {resource.topics.slice(0, 2).map((topic) => (
-            <Badge
-              key={topic}
-              variant="outline"
-              className="rounded-sm border-[var(--teal)]/50 text-xs font-medium text-[var(--green)]"
-            >
-              {topic}
-            </Badge>
-          ))}
-          {resource.topics.length > 2 && (
-            <Badge
-              variant="outline"
-              className="rounded-sm border-[var(--gray)] text-xs"
-            >
-              +{resource.topics.length - 2}
-            </Badge>
-          )}
-        </div>
-        <p className="mt-3 text-xs font-medium text-muted-foreground">
-          {resource.duration}
         </p>
-      </CardContent>
+
+        <div className="mt-auto space-y-3 pt-1">
+          <div className="flex flex-wrap gap-1.5">
+            {resource.topics.slice(0, 2).map((topic) => (
+              <Badge
+                key={topic}
+                variant="outline"
+                className="rounded-sm border-[var(--teal)]/50 text-xs font-medium text-[var(--green)]"
+              >
+                {topic}
+              </Badge>
+            ))}
+            {resource.topics.length > 2 && (
+              <Badge
+                variant="outline"
+                className="rounded-sm border-[var(--gray)] text-xs"
+              >
+                +{resource.topics.length - 2}
+              </Badge>
+            )}
+          </div>
+          <p className="text-xs font-medium text-muted-foreground">
+            {resource.duration}
+          </p>
+        </div>
+      </div>
     </Card>
   );
 }

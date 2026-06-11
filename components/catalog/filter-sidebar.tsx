@@ -133,16 +133,14 @@ export function FilterSidebar({ filters, onChange }: FilterSidebarProps) {
   return (
     <>
       <aside className="hidden w-64 shrink-0 lg:block">
-        <div className="sticky top-28 rounded-2xl border border-border bg-card p-5 shadow-sm">
+        <div className="sticky top-28 rounded-2xl border border-[var(--lightgray)] bg-card p-5 shadow-sm">
           <FilterContent filters={filters} onChange={onChange} />
         </div>
       </aside>
 
       <div className="lg:hidden">
         <Sheet>
-          <SheetTrigger
-            className="inline-flex w-full items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-medium hover:bg-muted"
-          >
+          <SheetTrigger className="btn-aiedu-light w-full">
             <Filter className="mr-2 h-4 w-4" />
             Filters
           </SheetTrigger>
