@@ -30,6 +30,12 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const logout = () => {
+    sessionStorage.removeItem(STORAGE_KEYS.adminAuth);
+    setAuthed(false);
+    setPasscode("");
+  };
+
   if (checking) {
     return (
       <div className="py-16 text-center text-muted-foreground">Checking access...</div>
@@ -83,5 +89,14 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
     );
   }
 
-  return <>{children}</>;
+  return (
+    <div className="space-y-4">
+      <div className="flex justify-end">
+        <Button type="button" variant="ghost" size="sm" onClick={logout}>
+          Sign out
+        </Button>
+      </div>
+      {children}
+    </div>
+  );
 }

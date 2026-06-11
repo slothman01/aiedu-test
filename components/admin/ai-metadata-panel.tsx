@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  DEMO_LESSON_TEXT,
   GRADE_BANDS,
   GRADE_LABELS,
   RESOURCE_TYPES,
@@ -96,14 +97,24 @@ export function AiMetadataPanel({ onApply }: AiMetadataPanelProps) {
           />
         </div>
 
-        <Button
-          type="button"
-          onClick={generate}
-          disabled={loading || !rawText.trim()}
-          className="rounded-xl"
-        >
-          {loading ? "Generating..." : "Generate metadata"}
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setRawText(DEMO_LESSON_TEXT)}
+          >
+            Load sample text
+          </Button>
+          <Button
+            type="button"
+            variant="aiedu"
+            onClick={generate}
+            disabled={loading || !rawText.trim()}
+          >
+            {loading ? "Generating..." : "Generate metadata"}
+          </Button>
+        </div>
 
         {suggestion && edited && (
           <div className="space-y-4 rounded-xl border border-border bg-card p-4">
@@ -197,8 +208,7 @@ export function AiMetadataPanel({ onApply }: AiMetadataPanelProps) {
 
             <Button
               type="button"
-              variant="secondary"
-              className="rounded-xl"
+              variant="aiedu"
               onClick={() => onApply(edited)}
             >
               Apply to form

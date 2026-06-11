@@ -16,13 +16,9 @@ export function VideoEmbedPlaceholder() {
             Application walkthrough video
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Record a 3–5 minute demo covering catalog search, collection save,
-            admin workflow, and AI metadata assist. Replace this placeholder with
-            a YouTube or Vimeo embed URL in{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-              components/process/video-embed-placeholder.tsx
-            </code>
-            .
+            Record a 3–5 minute Loom covering catalog search, collection save,
+            admin workflow, and AI metadata assist. After recording, paste your
+            embed URL here.
           </p>
         </div>
       </div>

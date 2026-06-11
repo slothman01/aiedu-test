@@ -77,3 +77,6 @@ export const STORAGE_KEYS = {
 } as const;
 
 export const DEMO_PASSCODE = "aiedu-demo";
+
+/** Paste-ready sample for admin AI metadata demo */
+export const DEMO_LESSON_TEXT = `This lesson introduces middle school students to neural networks using paper-based activities. Students learn how AI systems recognize patterns, build a simple classifier with index cards, and discuss ethical implications of facial recognition in schools.`;

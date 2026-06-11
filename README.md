@@ -9,6 +9,23 @@ Curriculum Studio is a curriculum management system prototype for an AI-literacy
 
 Built with **Cursor + Claude**. Estimated build time: ~10 hours (Phase 1).
 
+## Loom walkthrough script (~4 min)
+
+Use a **fresh incognito window** so admin login and collection start clean. Dismiss the demo banner with **X** before recording.
+
+| Step | Route | What to show |
+|------|-------|--------------|
+| 1 | `/` | Hero, search **deepfake**, filter by grade, open a resource |
+| 2 | `/resource/...` | Metadata chips, markdown content, **Download / Launch** toast |
+| 3 | `/` | Heart-save a resource → **My Collection** |
+| 4 | `/collection` | Saved card with pink heart |
+| 5 | `/admin` | Passcode **`aiedu-demo`** → dashboard, change draft → **published** |
+| 6 | `/admin/new` | **Load sample text** → **Generate metadata** → **Apply to form** |
+| 7 | `/admin/analytics` | Mock charts (optional, 30 sec) |
+| 8 | `/process` | Built vs mocked table, evaluation criteria |
+
+After recording: add Loom link to this README and embed on `/process`.
+
 ---
 
 ## Problem

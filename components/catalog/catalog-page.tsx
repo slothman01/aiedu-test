@@ -114,7 +114,8 @@ export function CatalogPage() {
 
         <div className="min-w-0 flex-1">
           <p className="mb-4 text-sm font-medium text-muted-foreground">
-            {filtered.length} resource{filtered.length === 1 ? "" : "s"} found
+            {filtered.length}{" "}
+            {filtered.length === 1 ? "resource" : "resources"} found
           </p>
 
           {filtered.length === 0 ? (
