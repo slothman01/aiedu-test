@@ -281,7 +281,7 @@ export function ResourceForm({ initial, onSaved }: ResourceFormProps) {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button type="submit" className="rounded-xl">
+        <Button type="submit" variant="aiedu">
           Save resource
         </Button>
         <Button type="button" variant="outline" onClick={() => router.push("/admin")}>

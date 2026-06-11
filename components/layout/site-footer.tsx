@@ -11,7 +11,7 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-border bg-[var(--aiedu-navy)] text-white">
+    <footer className="mt-16 border-t border-[var(--navy)] bg-[var(--navy)] text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--aiedu-cyan)]">
+            <h2 className="text-sm font-bold uppercase tracking-wide text-[var(--teal)]">
               Explore aiEDU
             </h2>
             <ul className="mt-4 space-y-2">
@@ -38,7 +38,7 @@ export function SiteFooter() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-white/80 transition-colors hover:text-white"
+                    className="text-sm text-white/80 underline-offset-2 transition-colors hover:text-[var(--teal)] hover:underline"
                   >
                     {label}
                   </a>
@@ -48,7 +48,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--aiedu-cyan)]">
+            <h2 className="text-sm font-bold uppercase tracking-wide text-[var(--teal)]">
               About this prototype
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/80">
@@ -58,7 +58,7 @@ export function SiteFooter() {
             </p>
             <Link
               href="/process"
-              className="mt-3 inline-block text-sm font-medium text-[var(--aiedu-cyan)] hover:underline"
+              className="mt-3 inline-block text-sm font-semibold text-[var(--teal)] hover:underline"
             >
               View build process →
             </Link>
@@ -74,7 +74,7 @@ export function SiteFooter() {
             href={AIEDU.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white"
+            className="hover:text-[var(--teal)]"
           >
             www.aiedu.org
           </a>

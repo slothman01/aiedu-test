@@ -9,7 +9,7 @@ export default function Home() {
     <Suspense
       fallback={
         <div className="space-y-8">
-          <div className="aiedu-gradient-soft h-48 animate-pulse rounded-2xl" />
+          <div className="section-navy h-48 animate-pulse rounded-2xl" />
           <p className="text-center text-muted-foreground">
             Loading {count} resources...
           </p>

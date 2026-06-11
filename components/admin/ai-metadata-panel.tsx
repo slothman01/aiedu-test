@@ -73,10 +73,10 @@ export function AiMetadataPanel({ onApply }: AiMetadataPanelProps) {
   };
 
   return (
-    <Card className="rounded-2xl border-primary/20 bg-secondary/50">
+    <Card className="rounded-md border-[var(--teal)]/30 bg-[var(--lightgray)]/30">
       <CardHeader>
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-primary" />
+          <Sparkles className="h-5 w-5 text-[var(--green)]" />
           <CardTitle>Generate metadata with AI</CardTitle>
         </div>
         <CardDescription>

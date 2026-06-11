@@ -22,7 +22,7 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
     return (
       <div className="rounded-xl border border-dashed p-12 text-center">
         <p className="text-lg font-medium">Resource not found</p>
-        <Button asChild className="mt-4">
+        <Button asChild variant="aiedu" className="mt-4">
           <Link href="/">Back to catalog</Link>
         </Button>
       </div>
@@ -42,9 +42,7 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
       </Link>
 
       <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
-        <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
-          {resource.title}
-        </h1>
+        <h1 className="text-[var(--navy)]">{resource.title}</h1>
         <p className="mt-3 text-lg text-muted-foreground">{resource.summary}</p>
         <MetadataChips resource={resource} />
 
@@ -54,7 +52,7 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
 
         {resource.materials.length > 0 && (
           <div className="mt-8">
-            <h2 className="text-lg font-semibold">Materials included</h2>
+            <h2 className="text-lg font-bold text-[var(--green)]">Materials included</h2>
             <ul className="mt-3 list-inside list-disc space-y-1 text-muted-foreground">
               {resource.materials.map((item) => (
                 <li key={item}>{item}</li>
@@ -64,7 +62,8 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
         )}
 
         <Button
-          className="mt-8 rounded-lg bg-primary hover:bg-primary/90"
+          variant="aiedu"
+          className="mt-8"
           onClick={() =>
             toast.info("Demo — would link to resource", {
               description: "In production this opens the lesson file or external URL.",
@@ -78,7 +77,7 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
 
       {related.length > 0 && (
         <section>
-          <h2 className="mb-4 text-xl font-semibold">Related resources</h2>
+          <h2 className="mb-4 text-xl font-bold text-[var(--navy)]">Related resources</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (
               <ResourceCard key={r.id} resource={r} />

@@ -18,12 +18,13 @@ import { AIEDU, STUDIO } from "@/lib/brand";
 export default function ProcessPage() {
   return (
     <div className="space-y-10">
-      <section className="aiedu-gradient overflow-hidden rounded-2xl px-6 py-10 text-white sm:px-10">
-        <p className="text-sm font-semibold uppercase tracking-wide text-white/80">
+      <section className="section-navy overflow-hidden rounded-2xl px-6 py-10 sm:px-10">
+        <p className="eyebrow-green !text-[var(--teal)]">
           Application exhibit · Built for {AIEDU.name}
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          How {STUDIO.name} was built
+        <h1 className="mt-3 text-white sm:text-[42px]">
+          How <span className="highlight-teal text-white">{STUDIO.name}</span> was
+          built
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90">
           A CMS prototype demonstrating how{" "}
@@ -51,7 +52,7 @@ export default function ProcessPage() {
               href={AIEDU.links.resources}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-primary hover:underline"
+              className="font-medium text-[var(--green)] hover:underline"
             >
               {AIEDU.name}&apos;s marketing site
             </a>

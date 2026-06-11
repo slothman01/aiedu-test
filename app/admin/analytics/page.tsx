@@ -46,12 +46,8 @@ export default function AnalyticsPage() {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            aiEDU · Analytics
-          </p>
-          <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
-            Analytics
-          </h1>
+          <p className="eyebrow-green">aiEDU · Analytics</p>
+          <h1 className="text-[var(--navy)]">Analytics</h1>
           <p className="mt-1 text-muted-foreground">
             Mock dashboard using seed view/download counts.
           </p>

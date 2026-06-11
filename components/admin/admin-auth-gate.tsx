@@ -40,13 +40,13 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="mx-auto max-w-md space-y-6 py-12">
         <div className="space-y-2 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-            <Lock className="h-6 w-6 text-primary" />
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--navy)]/10">
+            <Lock className="h-6 w-6 text-[var(--navy)]" />
           </div>
-          <h1 className="text-2xl font-bold text-[var(--aiedu-navy)]">Admin access</h1>
+          <h1 className="text-2xl font-bold text-[var(--navy)]">Admin access</h1>
           <p className="text-sm text-muted-foreground">
             Production: real auth + RBAC — see{" "}
-            <a href="/process" className="text-primary underline">
+            <a href="/process" className="font-semibold text-[var(--green)] underline">
               /process
             </a>
           </p>
@@ -57,8 +57,10 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
           className="space-y-4 rounded-2xl border border-border bg-card p-6 shadow-sm"
         >
           <div className="rounded-lg bg-secondary p-3 text-sm">
-            <p className="font-semibold text-primary">Demo passcode</p>
-            <p className="mt-1 font-mono text-primary">{DEMO_PASSCODE}</p>
+            <p className="font-bold text-[var(--green)]">Demo passcode</p>
+            <p className="mt-1 font-mono font-semibold text-[var(--navy)]">
+              {DEMO_PASSCODE}
+            </p>
           </div>
 
           <div className="space-y-2">
@@ -73,7 +75,7 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
             {error && <p className="text-sm text-destructive">{error}</p>}
           </div>
 
-          <Button type="submit" className="w-full rounded-lg">
+          <Button type="submit" variant="aiedu" className="w-full">
             Enter admin
           </Button>
         </form>

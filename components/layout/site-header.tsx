@@ -11,7 +11,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+    <header className="sticky top-0 z-40 border-b border-[var(--lightgray)] bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <Image
@@ -19,16 +19,12 @@ export function SiteHeader() {
             alt={AIEDU.name}
             width={120}
             height={40}
-            className="h-8 w-auto sm:h-9"
+            className="h-8 w-auto shrink-0 sm:h-9"
             priority
           />
-          <div className="hidden min-w-0 border-l border-border pl-3 sm:block">
-            <p className="truncate text-sm font-semibold text-[var(--aiedu-navy)]">
-              {STUDIO.name}
-            </p>
-            <p className="truncate text-xs text-muted-foreground">
-              {STUDIO.subtitle}
-            </p>
+          <div className="hidden min-w-0 border-l border-[var(--lightgray)] pl-3 md:block">
+            <p className="text-sm font-bold text-[var(--navy)]">{STUDIO.name}</p>
+            <p className="text-xs text-muted-foreground">{STUDIO.subtitle}</p>
           </div>
         </Link>
 
@@ -40,7 +36,7 @@ export function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--aiedu-navy)] transition-colors hover:bg-secondary hover:text-primary"
+              className="rounded-md px-2.5 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--navy)] transition-colors hover:bg-[var(--lightgray)] sm:px-3 sm:text-sm"
             >
               {label}
             </Link>
@@ -49,9 +45,9 @@ export function SiteHeader() {
             href={AIEDU.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-1 hidden rounded-md border border-primary px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:inline-block"
+            className="btn-aiedu ml-1 hidden text-xs sm:inline-flex sm:text-sm"
           >
-            aiedu.org
+            aiedu.org →
           </a>
         </nav>
       </div>

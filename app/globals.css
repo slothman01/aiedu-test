@@ -10,35 +10,51 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #222244;
-    --card: #ffffff;
-    --card-foreground: #222244;
-    --popover: #ffffff;
-    --popover-foreground: #222244;
-    --primary: #5815aa;
-    --primary-foreground: #ffffff;
-    --secondary: #f3eef8;
-    --secondary-foreground: #5815aa;
-    --muted: #f7f8fb;
+    /* aiEDU exact tokens from custom.css */
+    --white: #ffffff;
+    --lightgray: #eaeaea;
+    --gray: #cccccc;
+    --navy: #222244;
+    --teal: #00d9d3;
+    --mandarin: #f5501c;
+    --green: #007064;
+    --pink: #dc28c0;
+    --blue: #005af2;
+    --purple: #5815aa;
+    --chartreuse: #dbff00;
+
+    /* shadcn mappings */
+    --background: var(--white);
+    --foreground: var(--navy);
+    --card: var(--white);
+    --card-foreground: var(--navy);
+    --popover: var(--white);
+    --popover-foreground: var(--navy);
+    --primary: var(--navy);
+    --primary-foreground: var(--white);
+    --secondary: var(--lightgray);
+    --secondary-foreground: var(--navy);
+    --muted: #f7f7f8;
     --muted-foreground: #5a5a7a;
-    --accent: #e6faf9;
-    --accent-foreground: #007064;
-    --destructive: #f5501c;
-    --destructive-foreground: #ffffff;
-    --border: #e8e4f0;
-    --input: #e8e4f0;
-    --ring: #5815aa;
-    --chart-1: #5815aa;
-    --chart-2: #00d9d3;
-    --chart-3: #005af2;
-    --chart-4: #dc28c0;
-    --chart-5: #007064;
+    --accent: rgba(0, 217, 211, 0.12);
+    --accent-foreground: var(--green);
+    --destructive: var(--mandarin);
+    --destructive-foreground: var(--white);
+    --border: var(--lightgray);
+    --input: var(--lightgray);
+    --ring: var(--teal);
+    --chart-1: var(--navy);
+    --chart-2: var(--teal);
+    --chart-3: var(--blue);
+    --chart-4: var(--pink);
+    --chart-5: var(--green);
     --radius: 0.5rem;
-    --aiedu-purple: #5815aa;
-    --aiedu-cyan: #00d9d3;
-    --aiedu-navy: #222244;
-    --aiedu-teal: #007064;
+
+    /* legacy aliases */
+    --aiedu-navy: var(--navy);
+    --aiedu-cyan: var(--teal);
+    --aiedu-teal: var(--green);
+    --aiedu-purple: var(--purple);
   }
 
   * {
@@ -48,18 +64,83 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    @apply text-[38px] font-bold leading-tight sm:text-4xl;
+  }
+
+  h2 {
+    @apply text-[28px] font-bold leading-tight sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-[21px] font-semibold sm:text-2xl;
+  }
+
+  h4 {
+    @apply font-bold text-[var(--green)];
+  }
 }
 
 @layer components {
-  .aiedu-gradient {
-    background: linear-gradient(135deg, #5815aa 0%, #7b2cbf 45%, #005af2 100%);
+  .section-navy {
+    @apply bg-[var(--navy)] text-white;
   }
 
-  .aiedu-gradient-soft {
-    background: linear-gradient(
-      180deg,
-      rgba(88, 21, 170, 0.08) 0%,
-      rgba(0, 217, 211, 0.06) 100%
+  .eyebrow-green {
+    @apply text-sm font-bold uppercase tracking-wide text-[var(--green)];
+  }
+
+  .highlight-teal {
+    @apply relative inline-block;
+    background-image: linear-gradient(
+      to top,
+      var(--teal) 0%,
+      var(--teal) 28%,
+      transparent 28%
     );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .btn-aiedu {
+    @apply inline-flex items-center justify-center rounded-md bg-[var(--navy)] px-4 py-2 text-sm font-semibold text-white;
+    box-shadow: 4px 4px 0 var(--mandarin);
+    transition: all 350ms ease-in;
+  }
+
+  .btn-aiedu:hover {
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .btn-aiedu-light {
+    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-[var(--green)];
+    box-shadow: 4px 4px 0 var(--green);
+    transition: all 350ms ease-in;
+  }
+
+  .btn-aiedu-light:hover {
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .btn-aiedu-dark {
+    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-[var(--mandarin)];
+    box-shadow: 4px 4px 0 var(--mandarin);
+    transition: all 350ms ease-in;
+  }
+
+  .btn-aiedu-dark:hover {
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .card-aiedu-hover {
+    transition: all 350ms ease-in;
+  }
+
+  .card-aiedu-hover:hover {
+    box-shadow: 4px 4px 0 var(--mandarin);
   }
 }

@@ -5,15 +5,19 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { FilterSidebar } from "@/components/catalog/filter-sidebar";
 import { SearchBar } from "@/components/catalog/search-bar";
 import { ResourceCard } from "@/components/resource/resource-card";
+import { Button } from "@/components/ui/button";
 import { useCollection } from "@/hooks/use-collection";
 import { useResources } from "@/hooks/use-resources";
 import { AIEDU } from "@/lib/brand";
+import { GRADE_BANDS, GRADE_LABELS } from "@/lib/constants";
 import {
   filterResources,
   filtersFromSearchParams,
   searchParamsFromFilters,
+  toggleFilterValue,
 } from "@/lib/filters";
-import type { CatalogFilters } from "@/lib/types";
+import type { CatalogFilters, GradeBand } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 export function CatalogPage() {
   const router = useRouter();
@@ -39,6 +43,13 @@ export function CatalogPage() {
     [router]
   );
 
+  const toggleGrade = (grade: GradeBand) => {
+    updateFilters({
+      ...filters,
+      grade: toggleFilterValue(filters.grade, grade),
+    });
+  };
+
   const filtered = useMemo(
     () => filterResources(published, filters),
     [published, filters]
@@ -46,36 +57,68 @@ export function CatalogPage() {
 
   return (
     <div className="space-y-8">
-      <section className="aiedu-gradient-soft overflow-hidden rounded-2xl border border-border px-6 py-10 sm:px-10">
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-          Educators · Curricular Resources
-        </p>
-        <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-[var(--aiedu-navy)] sm:text-4xl">
-          Find AI-literacy classroom materials
+      <section className="section-navy overflow-hidden rounded-2xl px-6 py-10 sm:px-10">
+        <p className="eyebrow-green !text-[var(--teal)]">Educators · Curricular Resources</p>
+        <h1 className="mt-3 max-w-3xl text-white sm:text-[42px]">
+          Find{" "}
+          <span className="highlight-teal text-white">AI-literacy</span> classroom
+          materials
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85">
           {AIEDU.tagline} Search, filter, and explore structured curriculum
-          inspired by {AIEDU.name}&apos;s public catalog — lessons, courses,
-          projects, and quick guides for every grade band.
+          inspired by {AIEDU.name}&apos;s public catalog.
         </p>
-      </section>
 
-      <SearchBar
-        value={filters.q ?? ""}
-        onChange={(q) => updateFilters({ ...filters, q: q || undefined })}
-      />
+        <div className="mt-8 space-y-4">
+          <div className="max-w-xl">
+            <SearchBar
+              value={filters.q ?? ""}
+              onChange={(q) =>
+                updateFilters({ ...filters, q: q || undefined })
+              }
+              variant="hero"
+            />
+          </div>
+
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-white/70">
+              Quick filter by grade
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {GRADE_BANDS.map((grade) => {
+                const active = filters.grade?.includes(grade) ?? false;
+                return (
+                  <Button
+                    key={grade}
+                    type="button"
+                    size="sm"
+                    variant={active ? "aiedu-dark" : "outline"}
+                    className={cn(
+                      !active &&
+                        "border-white/30 bg-white/10 text-white hover:bg-white/20 hover:shadow-none"
+                    )}
+                    onClick={() => toggleGrade(grade)}
+                  >
+                    {GRADE_LABELS[grade]}
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="flex flex-col gap-6 lg:flex-row">
         <FilterSidebar filters={filters} onChange={updateFilters} />
 
         <div className="min-w-0 flex-1">
-          <p className="mb-4 text-sm text-muted-foreground">
+          <p className="mb-4 text-sm font-medium text-muted-foreground">
             {filtered.length} resource{filtered.length === 1 ? "" : "s"} found
           </p>
 
           {filtered.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-border bg-card p-12 text-center">
-              <p className="text-lg font-semibold text-[var(--aiedu-navy)]">
+            <div className="rounded-2xl border border-dashed border-[var(--gray)] bg-[var(--lightgray)]/40 p-12 text-center">
+              <p className="text-lg font-bold text-[var(--navy)]">
                 No resources match your filters
               </p>
               <p className="mt-2 text-sm text-muted-foreground">

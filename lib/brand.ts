@@ -11,14 +11,17 @@ export const AIEDU = {
   faviconUrl:
     "https://images.squarespace-cdn.com/content/v1/63ebe79f606efb032dd05a5b/8ac06477-a5b6-49b0-afae-53f80b7e334d/favicon.ico?format=100w",
   colors: {
-    purple: "#5815AA",
-    magenta: "#DC28C0",
-    blue: "#005AF2",
-    teal: "#007064",
-    cyan: "#00D9D3",
-    navy: "#222244",
-    orange: "#F5501C",
     white: "#FFFFFF",
+    lightgray: "#EAEAEA",
+    gray: "#CCCCCC",
+    navy: "#222244",
+    teal: "#00D9D3",
+    mandarin: "#F5501C",
+    green: "#007064",
+    pink: "#DC28C0",
+    blue: "#005AF2",
+    purple: "#5815AA",
+    chartreuse: "#DBFF00",
   },
   links: {
     about: "https://www.aiedu.org/about",
@@ -30,5 +33,5 @@ export const AIEDU = {
 
 export const STUDIO = {
   name: "Curriculum Studio",
-  subtitle: "Curricular Resources Portal — Prototype",
+  subtitle: "Resources Portal",
 } as const;
