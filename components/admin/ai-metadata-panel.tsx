@@ -73,7 +73,7 @@ export function AiMetadataPanel({ onApply }: AiMetadataPanelProps) {
   };
 
   return (
-    <Card className="rounded-xl border-primary/20 bg-primary/5">
+    <Card className="rounded-2xl border-primary/20 bg-secondary/50">
       <CardHeader>
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-primary" />

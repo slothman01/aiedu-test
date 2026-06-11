@@ -23,15 +23,7 @@ import { hasCompleteMetadata } from "@/lib/resources";
 import { TOPICS } from "@/lib/constants";
 
 export default function AnalyticsPage() {
-  const { resources, ready } = useResources();
-
-  if (!ready) {
-    return (
-      <div className="py-16 text-center text-muted-foreground">
-        Loading analytics...
-      </div>
-    );
-  }
+  const { resources } = useResources();
 
   const chartData = resources
     .filter((r) => r.status === "published")
@@ -54,7 +46,12 @@ export default function AnalyticsPage() {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Analytics</h1>
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            aiEDU · Analytics
+          </p>
+          <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
+            Analytics
+          </h1>
           <p className="mt-1 text-muted-foreground">
             Mock dashboard using seed view/download counts.
           </p>

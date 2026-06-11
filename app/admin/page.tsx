@@ -27,7 +27,7 @@ import { updateResourceStatus } from "@/lib/resources";
 import type { ResourceStatus } from "@/lib/types";
 
 export default function AdminPage() {
-  const { resources, ready, refresh } = useResources();
+  const { resources, refresh } = useResources();
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
@@ -45,19 +45,16 @@ export default function AdminPage() {
     refresh();
   };
 
-  if (!ready) {
-    return (
-      <div className="py-16 text-center text-muted-foreground">
-        Loading admin...
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            aiEDU · Admin
+          </p>
+          <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
+            Admin Dashboard
+          </h1>
           <p className="mt-1 text-muted-foreground">
             Manage all resources including drafts and in-review items.
           </p>

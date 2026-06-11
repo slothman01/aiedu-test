@@ -20,7 +20,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         placeholder="Search title, summary, or topics..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-xl pl-10"
+        className="rounded-xl pl-10 ring-primary/20 focus-visible:ring-primary"
         aria-label="Search resources"
       />
     </div>

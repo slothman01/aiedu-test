@@ -133,7 +133,7 @@ export function FilterSidebar({ filters, onChange }: FilterSidebarProps) {
   return (
     <>
       <aside className="hidden w-64 shrink-0 lg:block">
-        <div className="sticky top-24 rounded-xl border border-border/70 bg-card p-5 shadow-sm">
+        <div className="sticky top-28 rounded-2xl border border-border bg-card p-5 shadow-sm">
           <FilterContent filters={filters} onChange={onChange} />
         </div>
       </aside>

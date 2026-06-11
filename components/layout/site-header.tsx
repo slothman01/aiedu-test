@@ -1,40 +1,58 @@
 import Link from "next/link";
-import { BookOpen, Heart, LayoutDashboard, Workflow } from "lucide-react";
+import Image from "next/image";
+import { AIEDU, STUDIO } from "@/lib/brand";
 
 const navItems = [
-  { href: "/", label: "Catalog", icon: BookOpen },
-  { href: "/collection", label: "My Collection", icon: Heart },
-  { href: "/process", label: "Process", icon: Workflow },
-  { href: "/admin", label: "Admin", icon: LayoutDashboard },
+  { href: "/", label: "Catalog" },
+  { href: "/collection", label: "My Collection" },
+  { href: "/process", label: "Process" },
+  { href: "/admin", label: "Admin" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-            <BookOpen className="h-5 w-5" aria-hidden="true" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold leading-tight text-foreground">
-              Curriculum Studio
+    <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <Image
+            src={AIEDU.logoUrl}
+            alt={AIEDU.name}
+            width={120}
+            height={40}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
+          <div className="hidden min-w-0 border-l border-border pl-3 sm:block">
+            <p className="truncate text-sm font-semibold text-[var(--aiedu-navy)]">
+              {STUDIO.name}
             </p>
-            <p className="text-xs text-muted-foreground">AI literacy resources</p>
+            <p className="truncate text-xs text-muted-foreground">
+              {STUDIO.subtitle}
+            </p>
           </div>
         </Link>
 
-        <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-1">
-          {navItems.map(({ href, label, icon: Icon }) => (
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-wrap items-center justify-end gap-0.5"
+        >
+          {navItems.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--aiedu-navy)] transition-colors hover:bg-secondary hover:text-primary"
             >
-              <Icon className="h-4 w-4" aria-hidden="true" />
-              <span className="hidden sm:inline">{label}</span>
+              {label}
             </Link>
           ))}
+          <a
+            href={AIEDU.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 hidden rounded-md border border-primary px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:inline-block"
+          >
+            aiedu.org
+          </a>
         </nav>
       </div>
     </header>

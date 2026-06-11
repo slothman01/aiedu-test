@@ -15,16 +15,8 @@ interface ResourceDetailProps {
 }
 
 export function ResourceDetail({ slug }: ResourceDetailProps) {
-  const { published, ready, overrides } = useResources();
+  const { published, overrides } = useResources();
   const resource = published.find((r) => r.slug === slug);
-
-  if (!ready) {
-    return (
-      <div className="py-16 text-center text-muted-foreground">
-        Loading resource...
-      </div>
-    );
-  }
 
   if (!resource) {
     return (
@@ -49,8 +41,10 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
         Back to catalog
       </Link>
 
-      <div className="rounded-xl border border-border/70 bg-card p-6 shadow-sm sm:p-8">
-        <h1 className="text-3xl font-bold tracking-tight">{resource.title}</h1>
+      <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
+          {resource.title}
+        </h1>
         <p className="mt-3 text-lg text-muted-foreground">{resource.summary}</p>
         <MetadataChips resource={resource} />
 
@@ -70,7 +64,7 @@ export function ResourceDetail({ slug }: ResourceDetailProps) {
         )}
 
         <Button
-          className="mt-8 rounded-xl"
+          className="mt-8 rounded-lg bg-primary hover:bg-primary/90"
           onClick={() =>
             toast.info("Demo — would link to resource", {
               description: "In production this opens the lesson file or external URL.",

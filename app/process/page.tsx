@@ -13,21 +13,32 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { AIEDU, STUDIO } from "@/lib/brand";
 
 export default function ProcessPage() {
   return (
     <div className="space-y-10">
-      <div className="space-y-3">
-        <p className="text-sm font-medium text-primary">Application exhibit</p>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          How Curriculum Studio was built
-        </h1>
-        <p className="max-w-3xl text-lg text-muted-foreground">
-          Curriculum Studio is a CMS prototype built for my aiEDU application — a
-          structured catalog and lightweight admin workflow replacing a static
-          marketing-site approach to curriculum distribution.
+      <section className="aiedu-gradient overflow-hidden rounded-2xl px-6 py-10 text-white sm:px-10">
+        <p className="text-sm font-semibold uppercase tracking-wide text-white/80">
+          Application exhibit · Built for {AIEDU.name}
         </p>
-      </div>
+        <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          How {STUDIO.name} was built
+        </h1>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90">
+          A CMS prototype demonstrating how{" "}
+          <a
+            href={AIEDU.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline underline-offset-2"
+          >
+            {AIEDU.name}
+          </a>{" "}
+          could evolve beyond its current static resource portal — with search,
+          structured metadata, and a lightweight admin workflow.
+        </p>
+      </section>
 
       <Card className="rounded-xl">
         <CardHeader>
@@ -35,10 +46,18 @@ export default function ProcessPage() {
         </CardHeader>
         <CardContent className="space-y-3 text-muted-foreground">
           <p>
-            Educators looking for AI-literacy classroom material currently navigate a
-            marketing site: resources are scattered across blog posts, PDFs, and
-            standalone pages with no unified catalog, no search, no filtering by grade
-            or time, and no metadata.
+            Educators looking for AI-literacy classroom material currently navigate{" "}
+            <a
+              href={AIEDU.links.resources}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {AIEDU.name}&apos;s marketing site
+            </a>
+            : resources are scattered across blog posts, PDFs, and standalone pages
+            with no unified catalog, no search, no filtering by grade or time, and
+            no metadata.
           </p>
           <p>
             Internally, the Programs team manages curriculum by editing a website — no

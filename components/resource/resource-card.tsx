@@ -27,12 +27,14 @@ export function ResourceCard({
   onToggleSave,
 }: ResourceCardProps) {
   return (
-    <Card className="relative flex h-full flex-col rounded-xl border-border/70 shadow-sm transition-shadow hover:shadow-md">
+    <Card className="relative flex h-full flex-col rounded-2xl border-border/80 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-2">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">{TYPE_LABELS[resource.type]}</Badge>
+              <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
+                {TYPE_LABELS[resource.type]}
+              </Badge>
               <Badge variant="outline">{GRADE_LABELS[resource.gradeBand]}</Badge>
             </div>
             <CardTitle className="text-lg leading-snug">
@@ -69,7 +71,7 @@ export function ResourceCard({
       <CardContent className="mt-auto pt-0">
         <div className="flex flex-wrap gap-1.5">
           {resource.topics.slice(0, 2).map((topic) => (
-            <Badge key={topic} variant="outline" className="text-xs">
+            <Badge key={topic} variant="outline" className="border-[var(--aiedu-cyan)]/40 text-xs text-[var(--aiedu-teal)]">
               {topic}
             </Badge>
           ))}

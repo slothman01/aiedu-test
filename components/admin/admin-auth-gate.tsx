@@ -40,10 +40,10 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="mx-auto max-w-md space-y-6 py-12">
         <div className="space-y-2 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
             <Lock className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="text-2xl font-bold">Admin access</h1>
+          <h1 className="text-2xl font-bold text-[var(--aiedu-navy)]">Admin access</h1>
           <p className="text-sm text-muted-foreground">
             Production: real auth + RBAC — see{" "}
             <a href="/process" className="text-primary underline">
@@ -54,10 +54,10 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
 
         <form
           onSubmit={login}
-          className="space-y-4 rounded-xl border border-border/70 bg-card p-6 shadow-sm"
+          className="space-y-4 rounded-2xl border border-border bg-card p-6 shadow-sm"
         >
-          <div className="rounded-lg bg-muted p-3 text-sm">
-            <p className="font-medium">Demo passcode</p>
+          <div className="rounded-lg bg-secondary p-3 text-sm">
+            <p className="font-semibold text-primary">Demo passcode</p>
             <p className="mt-1 font-mono text-primary">{DEMO_PASSCODE}</p>
           </div>
 
@@ -73,7 +73,7 @@ export function AdminAuthGate({ children }: { children: React.ReactNode }) {
             {error && <p className="text-sm text-destructive">{error}</p>}
           </div>
 
-          <Button type="submit" className="w-full rounded-xl">
+          <Button type="submit" className="w-full rounded-lg">
             Enter admin
           </Button>
         </form>

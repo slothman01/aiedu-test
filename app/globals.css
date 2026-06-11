@@ -10,31 +10,35 @@
 
 @layer base {
   :root {
-    --background: oklch(0.99 0.005 220);
-    --foreground: oklch(0.2 0.03 240);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.2 0.03 240);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.2 0.03 240);
-    --primary: oklch(0.45 0.12 230);
-    --primary-foreground: oklch(0.99 0 0);
-    --secondary: oklch(0.94 0.02 200);
-    --secondary-foreground: oklch(0.3 0.06 220);
-    --muted: oklch(0.96 0.01 220);
-    --muted-foreground: oklch(0.5 0.03 230);
-    --accent: oklch(0.92 0.04 190);
-    --accent-foreground: oklch(0.25 0.06 200);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.985 0 0);
-    --border: oklch(0.9 0.02 220);
-    --input: oklch(0.9 0.02 220);
-    --ring: oklch(0.55 0.1 200);
-    --chart-1: oklch(0.55 0.12 230);
-    --chart-2: oklch(0.6 0.1 190);
-    --chart-3: oklch(0.65 0.08 170);
-    --chart-4: oklch(0.5 0.1 250);
-    --chart-5: oklch(0.7 0.06 200);
-    --radius: 0.75rem;
+    --background: #ffffff;
+    --foreground: #222244;
+    --card: #ffffff;
+    --card-foreground: #222244;
+    --popover: #ffffff;
+    --popover-foreground: #222244;
+    --primary: #5815aa;
+    --primary-foreground: #ffffff;
+    --secondary: #f3eef8;
+    --secondary-foreground: #5815aa;
+    --muted: #f7f8fb;
+    --muted-foreground: #5a5a7a;
+    --accent: #e6faf9;
+    --accent-foreground: #007064;
+    --destructive: #f5501c;
+    --destructive-foreground: #ffffff;
+    --border: #e8e4f0;
+    --input: #e8e4f0;
+    --ring: #5815aa;
+    --chart-1: #5815aa;
+    --chart-2: #00d9d3;
+    --chart-3: #005af2;
+    --chart-4: #dc28c0;
+    --chart-5: #007064;
+    --radius: 0.5rem;
+    --aiedu-purple: #5815aa;
+    --aiedu-cyan: #00d9d3;
+    --aiedu-navy: #222244;
+    --aiedu-teal: #007064;
   }
 
   * {
@@ -43,5 +47,19 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .aiedu-gradient {
+    background: linear-gradient(135deg, #5815aa 0%, #7b2cbf 45%, #005af2 100%);
+  }
+
+  .aiedu-gradient-soft {
+    background: linear-gradient(
+      180deg,
+      rgba(88, 21, 170, 0.08) 0%,
+      rgba(0, 217, 211, 0.06) 100%
+    );
   }
 }

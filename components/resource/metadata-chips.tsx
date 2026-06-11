@@ -14,7 +14,9 @@ interface MetadataChipsProps {
 export function MetadataChips({ resource, compact = false }: MetadataChipsProps) {
   return (
     <div className={`flex flex-wrap gap-2 ${compact ? "" : "mt-4"}`}>
-      <Badge variant="secondary">{TYPE_LABELS[resource.type]}</Badge>
+      <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
+        {TYPE_LABELS[resource.type]}
+      </Badge>
       <Badge variant="outline">{GRADE_LABELS[resource.gradeBand]}</Badge>
       <Badge variant="outline">{AUDIENCE_LABELS[resource.audience]}</Badge>
       <Badge variant="outline">{resource.duration}</Badge>

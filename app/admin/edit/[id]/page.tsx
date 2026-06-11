@@ -10,16 +10,8 @@ interface PageProps {
 }
 
 export default function EditResourcePage({ params }: PageProps) {
-  const { resources, ready } = useResources();
+  const { resources } = useResources();
   const resource = resources.find((r) => r.id === params.id);
-
-  if (!ready) {
-    return (
-      <div className="py-16 text-center text-muted-foreground">
-        Loading resource...
-      </div>
-    );
-  }
 
   if (!resource) {
     return (

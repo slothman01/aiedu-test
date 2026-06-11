@@ -8,39 +8,44 @@ import { useCollection } from "@/hooks/use-collection";
 import { useResources } from "@/hooks/use-resources";
 
 export default function CollectionPage() {
-  const { collection, ready, toggle } = useCollection();
+  const { collection, toggle } = useCollection();
   const { published } = useResources();
 
   const saved = published.filter((r) => collection.includes(r.slug));
 
-  if (!ready) {
-    return (
-      <div className="py-16 text-center text-muted-foreground">
-        Loading collection...
-      </div>
-    );
-  }
-
   return (
-    <div className="space-y-6">
-      <div className="space-y-2">
+    <div className="space-y-8">
+      <section className="space-y-3">
         <div className="flex items-center gap-2">
-          <Heart className="h-6 w-6 text-primary" aria-hidden="true" />
-          <h1 className="text-3xl font-bold tracking-tight">My Collection</h1>
+          <Heart className="h-7 w-7 text-primary" aria-hidden="true" />
+          <h1 className="text-3xl font-bold tracking-tight text-[var(--aiedu-navy)]">
+            My Collection
+          </h1>
         </div>
         <p className="max-w-2xl text-muted-foreground">
           Resources you&apos;ve saved for later. In production this would sync to
-          an educator account — likely Google for Education SSO.
+          an educator account — likely Google for Education SSO, aligned with{" "}
+          <a
+            href="https://www.aiedu.org/educator-empowerment"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            aiEDU&apos;s educator programs
+          </a>
+          .
         </p>
-      </div>
+      </section>
 
       {saved.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-border bg-card p-12 text-center">
-          <p className="text-lg font-medium">Your collection is empty</p>
+        <div className="rounded-2xl border border-dashed border-border bg-card p-12 text-center">
+          <p className="text-lg font-semibold text-[var(--aiedu-navy)]">
+            Your collection is empty
+          </p>
           <p className="mt-2 text-sm text-muted-foreground">
             Tap the heart icon on any resource card to save it here.
           </p>
-          <Button asChild className="mt-4 rounded-xl">
+          <Button asChild className="mt-4 rounded-lg">
             <Link href="/">Browse catalog</Link>
           </Button>
         </div>
