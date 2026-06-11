@@ -3,7 +3,7 @@
 Curriculum Studio is a curriculum management system prototype for an AI-literacy education nonprofit. It replaces a static marketing-site approach with a searchable catalog, structured metadata, and a lightweight admin workflow.
 
 **Repository:** [github.com/slothman01/aiedu-test](https://github.com/slothman01/aiedu-test)  
-**Live demo:** _(add Vercel URL after deploy)_  
+**Live demo:** [aiedu-test-two.vercel.app](https://aiedu-test-two.vercel.app/)  
 **Application video:** _(add link after recording)_
 
 Built with **Cursor + Claude**. Estimated build time: ~10 hours (Phase 1).

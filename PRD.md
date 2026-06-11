@@ -123,4 +123,4 @@ Phase 1 uses deterministic keyword matching (mock mode). Phase 2 would use struc
 
 ---
 
-_See [README.md](README.md) for setup instructions and [/process](https://your-demo-url.vercel.app/process) for the live exhibit page._
+_See [README.md](README.md) for setup instructions and [/process](https://aiedu-test-two.vercel.app/process) for the live exhibit page._
