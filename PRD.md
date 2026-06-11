@@ -123,4 +123,4 @@ Phase 1 uses deterministic keyword matching (mock mode). Phase 2 would use struc
 
 ---
 
-_See [README.md](README.md) for setup instructions, [application video](https://www.loom.com/share/b80eab28497d4684a1feed7c7f24e616), and [/process](https://curriculum-studio.vercel.app/process) for the live exhibit page._
+_See [README.md](README.md) for setup instructions, [application video](https://curriculum-studio.vercel.app/process) (self-hosted walkthrough with captions), and the live exhibit page._
